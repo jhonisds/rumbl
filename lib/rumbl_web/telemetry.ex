@@ -1,4 +1,8 @@
 defmodule RumblWeb.Telemetry do
+  @moduledoc """
+    This module calls Telemetry
+  """
+
   use Supervisor
   import Telemetry.Metrics
 

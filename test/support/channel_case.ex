@@ -14,6 +14,7 @@ defmodule RumblWeb.ChannelCase do
   by setting `use RumblWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
+  alias Ecto.Adapters.SQL.Sandbox
 
   use ExUnit.CaseTemplate
 
@@ -29,10 +30,10 @@ defmodule RumblWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Rumbl.Repo)
+    :ok = Sandbox.checkout(Rumbl.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Rumbl.Repo, {:shared, self()})
+      Sandbox.mode(Rumbl.Repo, {:shared, self()})
     end
 
     :ok
