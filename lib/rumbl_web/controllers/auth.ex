@@ -15,11 +15,16 @@ defmodule RumblWeb.Auth do
   end
 
   def login(conn, user) do
-    IO.inspect(user, label: "[Plug Auth login]")
+    # IO.inspect(user, label: "[Plug Auth login]")
 
     conn
     |> assign(:current_user, user)
     |> put_session(:user_id, user.id)
     |> configure_session(renew: true)
+  end
+
+  def logout(conn) do
+    # IO.inspect(conn, label: "[IO - logout]")
+    configure_session(conn, drop: true)
   end
 end
