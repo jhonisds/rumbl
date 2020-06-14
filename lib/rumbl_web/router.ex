@@ -27,6 +27,12 @@ defmodule RumblWeb.Router do
   #   pipe_through :api
   # end
 
+  scope "/manage", RumblWeb do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/videos", VideoController
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
