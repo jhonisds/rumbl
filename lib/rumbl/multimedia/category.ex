@@ -1,4 +1,7 @@
 defmodule Rumbl.Multimedia.Category do
+  @moduledoc """
+  Schema Category
+  """
   use Ecto.Schema
   import Ecto.{Changeset, Query}
 

@@ -6,8 +6,8 @@ defmodule Rumbl.Multimedia do
   import Ecto.Query, warn: false
   alias Rumbl.Repo
 
-  alias Rumbl.Multimedia.{Video, Category}
   alias Rumbl.Accounts
+  alias Rumbl.Multimedia.{Category, Video}
 
   @doc """
   Returns the list of videos.

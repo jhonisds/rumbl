@@ -1,4 +1,7 @@
 defmodule Rumbl.Multimedia.Video do
+  @moduledoc """
+  Schema Video
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -6,7 +9,6 @@ defmodule Rumbl.Multimedia.Video do
     field :description, :string
     field :title, :string
     field :url, :string
-    # field :user_id, :id
     belongs_to :user, Rumbl.Accounts.User
     belongs_to :category, Rumbl.Multimedia.Category
 

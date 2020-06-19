@@ -23,12 +23,12 @@ defmodule RumblWeb.UserController do
 
   def new(conn, _params) do
     changeset = Accounts.change_registration(%User{}, %{})
-    IO.inspect(changeset, label: "[User Controller new]")
+    # IO.inspect(changeset, label: "[User Controller new]")
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"user" => user_params}) do
-    IO.inspect(user_params, label: "[User Controller create]")
+    # IO.inspect(user_params, label: "[User Controller create]")
 
     case Accounts.register_user(user_params) do
       {:ok, user} ->
