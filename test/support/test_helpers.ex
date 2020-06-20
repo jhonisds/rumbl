@@ -15,14 +15,15 @@ defmodule Rumbl.TestHelpers do
   end
 
   def video_fixture(%Accounts.User{} = user, attrs \\ %{}) do
-    attrs
-    |> Enum.into(%{
-      title: "A Title",
-      url: "http://example.com",
-      password: "a description"
-    })
+    attrs =
+      Enum.into(attrs, %{
+        title: "A Title",
+        url: "http://example.com",
+        description: "a description"
+      })
 
     {:ok, video} = Multimedia.create_video(user, attrs)
+
     video
   end
 end
