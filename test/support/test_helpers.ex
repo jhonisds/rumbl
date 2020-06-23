@@ -1,4 +1,7 @@
 defmodule Rumbl.TestHelpers do
+  @moduledoc """
+  This module build fixtures functions for user and video.
+  """
   alias Rumbl.{Accounts, Multimedia}
 
   def user_fixture(attrs \\ %{}) do
