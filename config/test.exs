@@ -20,3 +20,6 @@ config :rumbl, RumblWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure number of hashing
+config :pbkdf2_elixir, :rounds, 1
