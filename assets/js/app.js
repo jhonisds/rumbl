@@ -15,7 +15,6 @@ import "../css/app.scss"
 import "phoenix_html"
 
 import Player from "./player"
-
 let video = document.getElementById("video")
 
 if (video) {

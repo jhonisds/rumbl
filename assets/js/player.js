@@ -2,11 +2,11 @@ let Player = {
     player: null,
 
     init(domId, playerId, onReady) {
-        window.onYoutubeIframeAPIReady = () => {
+        window.onYouTubeIframeAPIReady = () => {
             this.onIframeReady(domId, playerId, onReady)
         }
         let youtubeScriptTag = document.createElement("script")
-        youtubeScriptTag = "//www.youtube.com/iframe_api"
+        youtubeScriptTag.src = "//www.youtube.com/iframe_api"
         document.head.appendChild(youtubeScriptTag)
     },
     onIframeReady(domId, playerId, onReady) {
@@ -20,9 +20,9 @@ let Player = {
             }
         })
     },
+
     onPlayerStateChange(event) { },
     getCurrentTime() { return Math.floor(this.player.getCurrentTime() * 1000) },
     seekTo(millsec) { return this.player.seekTo(millsec / 1000) }
 }
-
 export default Player
