@@ -1,8 +1,8 @@
 defmodule RumblWeb.AuthTest do
   use RumblWeb.ConnCase, async: true
 
-  alias RumblWeb.{Auth, Router}
   alias Rumbl.Accounts.User
+  alias RumblWeb.{Auth, Router}
 
   setup %{conn: conn} do
     conn =

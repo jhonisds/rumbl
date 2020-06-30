@@ -1,4 +1,7 @@
 defmodule Rumbl.Multimedia.Permalink do
+  @moduledoc """
+  This Module create friedly URLs with protocols
+  """
   @behaviour Ecto.Type
 
   def type, do: :id
