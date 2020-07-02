@@ -16,8 +16,8 @@ let Video = {
 
     onReady(videoId, socket) {
         let msgContainer = document.getElementById("msg-container")
-        let msgInput = document.getElementById("msg_input")
-        let postButton = document.getElementById("msg_submit")
+        let msgInput = document.getElementById("msg-input")
+        let postButton = document.getElementById("msg-submit")
         let vidChannel = socket.channel("videos:" + videoId)
 
         postButton.addEventListener("click", e => {
