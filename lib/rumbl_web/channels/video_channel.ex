@@ -5,6 +5,7 @@ defmodule RumblWeb.VideoChannel do
   use RumblWeb, :channel
 
   alias Rumbl.{Accounts, Multimedia}
+  alias RumblWeb.UserView
 
   def join("videos:" <> video_id, _params, socket) do
     {:ok, assign(socket, :video_id, String.to_integer(video_id))}
@@ -20,7 +21,7 @@ defmodule RumblWeb.VideoChannel do
       {:ok, annotation} ->
         broadcast!(socket, "new_annotation", %{
           id: annotation.id,
-          user: RumblWeb.UserView.render("user.json", %{user: user}),
+          user: UserView.render("user.json", %{user: user}),
           body: annotation.body,
           at: annotation.at
         })
