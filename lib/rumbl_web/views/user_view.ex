@@ -10,7 +10,6 @@ defmodule RumblWeb.UserView do
   end
 
   def render("user.json", %{user: user}) do
-    IO.inspect(user, label: "USER")
     %{id: user.id, username: user.username}
   end
 end
