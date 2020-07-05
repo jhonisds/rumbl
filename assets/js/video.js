@@ -27,6 +27,13 @@ let Video = {
             msgInput.value = ""
         })
 
+        msgContainer.addEventListener("click", e => {
+            e.preventDefault()
+            let seconds = e.target.getAttribute("data-seek") || e.target.parentNode.getAttribute("data-seek")
+            if (!seconds) { return }
+            Player.seekTo(seconds)
+        })
+
         vidChannel.on("new_annotation", (resp) => {
             this.renderAnnotation(msgContainer, resp)
         })
@@ -80,7 +87,6 @@ let Video = {
     formatTime(at) {
         let date = new Date(null)
         date.setSeconds(at / 1000)
-        console.log(date)
         return date.toISOString().substr(14, 5)
     }
 }
