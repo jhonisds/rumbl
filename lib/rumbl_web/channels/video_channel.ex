@@ -5,7 +5,7 @@ defmodule RumblWeb.VideoChannel do
   use RumblWeb, :channel
 
   alias Rumbl.{Accounts, Multimedia}
-  alias RumblWeb.{UserView, AnnotationView, Presence}
+  alias RumblWeb.{AnnotationView, Presence, UserView}
 
   def join("videos:" <> video_id, params, socket) do
     send(self(), :after_join)

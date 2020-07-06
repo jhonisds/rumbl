@@ -7,8 +7,7 @@ defmodule Rumbl.Multimedia do
   alias Rumbl.Repo
 
   alias Rumbl.Accounts
-  alias Rumbl.Multimedia.{Category, Video}
-  alias Rumbl.Multimedia.Annotation
+  alias Rumbl.Multimedia.{Annotation, Category, Video}
 
   @doc """
   Returns the list of videos.

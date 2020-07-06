@@ -1,4 +1,8 @@
 defmodule Rumbl.Multimedia.Annotation do
+  @moduledoc """
+  Module Schema Annotation
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
